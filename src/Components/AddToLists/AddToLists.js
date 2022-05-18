@@ -9,6 +9,26 @@ const AddToLists = () => {
     reset,
   } = useForm();
   const onSubmit = async (data) =>{
+      const title = data.title;
+      const description = data.description;
+      const list = {
+          title,
+          description
+      }
+      fetch('http://localhost:4000/do_lists', {
+        method: 'POST',
+        body: JSON.stringify(list),
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8',
+        },
+      })
+        .then((response) => response.json())
+        .then((data) =>{
+           if(data.acknowledged){
+               alert('Added successfully');
+               reset();
+           }
+        });
 
   }
   return (
