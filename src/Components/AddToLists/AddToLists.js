@@ -15,7 +15,7 @@ const AddToLists = () => {
           title,
           description
       }
-      fetch('http://localhost:4000/do_lists', {
+      fetch('https://peaceful-river-54114.herokuapp.com/do_lists', {
         method: 'POST',
         body: JSON.stringify(list),
         headers: {
@@ -32,9 +32,9 @@ const AddToLists = () => {
 
   }
   return (
-    <div className="flex items-center justify-center mt-12">
+    <div className="flex items-center justify-center mt-12 bg-gray-200 py-10">
       <div className="mt-5 ">
-        <h1 className="text-2xl font-bold">Add to To-Do Lists</h1>
+        <h1 className="text-3xl font-bold text-gray-500">Add to To-Do Lists</h1>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div class="form-control w-full max-w-xs">
             <label class="label">

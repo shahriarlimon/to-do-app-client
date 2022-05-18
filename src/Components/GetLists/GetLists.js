@@ -10,15 +10,15 @@ const GetLists = () => {
         data: lists,
         refetch,
       } = useQuery("lists", () =>
-        fetch(`http://localhost:4000/lists`).then((res) => res.json())
+        fetch(`https://peaceful-river-54114.herokuapp.com/lists`).then((res) => res.json())
       );
       if(isLoading){
           return <Loading/>
       }
     
     return (
-        <div >
-           <h1 className='text-2xl text-center my-5'> Total lists: {lists.length}</h1>
+        <div className='px-3' >
+           <h1 className='text-3xl text-center my-8 font-semibold text-gray-700'> You have made {lists.length} To-Do Lists</h1>
             <div className='grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-5'>
                 {
                     lists?.map(list=><SingleList refetch={refetch} key={list._id} list={list}/>)

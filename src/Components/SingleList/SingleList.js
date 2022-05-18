@@ -4,7 +4,7 @@ const SingleList = ({ list,refetch }) => {
   const { _id, title, description } = list;
   const [strike, setStrike] = useState(false)
   const handleDelete = (title) => {
-    const url = `http://localhost:4000/list/${title}`;
+    const url = `https://peaceful-river-54114.herokuapp.com/list/${title}`;
     fetch(url, {
       method: "DELETE",
     }).then(res=>res.json()).then(data=>{
@@ -15,7 +15,7 @@ const SingleList = ({ list,refetch }) => {
     })
   };
   return (
-    <div class="card lg:max-w-max bg-neutral text-neutral-content">
+    <div class="card bg-neutral text-neutral-content">
       <div class="card-body items-center text-center">
         {strike?<strike><h2 class="card-title">{title}</h2></strike>:<h2 class="card-title">{title}</h2>}
         { strike?<strike><p>{description}</p></strike> :<p>{description}</p>}

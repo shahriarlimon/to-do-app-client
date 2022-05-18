@@ -4,7 +4,7 @@ import GetLists from '../GetLists/GetLists';
 
 const ToDo = () => {
     return (
-        <div>
+        <div className='px-12'>
             <AddToLists/>
             <GetLists/>
         </div>
